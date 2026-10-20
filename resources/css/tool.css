@@ -1,0 +1,108 @@
+/*
+ * Colors come from Nova's own palette variables, so the tool follows the host's
+ * brand color and dark mode. `srt-` keeps these clear of Nova's classes.
+ */
+.srt { --srt-text: rgba(var(--colors-gray-900)); --srt-muted: rgba(var(--colors-gray-500)); --srt-line: rgba(var(--colors-gray-200)); --srt-soft: rgba(var(--colors-gray-100)); --srt-accent: rgba(var(--colors-primary-500)); --srt-danger: rgba(var(--colors-red-500)); --srt-danger-soft: rgba(var(--colors-red-100)); --srt-success: rgba(var(--colors-green-600)); --srt-success-soft: rgba(var(--colors-green-100)); --srt-note: rgba(var(--colors-amber-50)); }
+.dark .srt { --srt-text: rgba(var(--colors-gray-100)); --srt-muted: rgba(var(--colors-gray-400)); --srt-line: rgba(var(--colors-gray-700)); --srt-soft: rgba(var(--colors-gray-800)); --srt-danger-soft: rgba(var(--colors-red-900)); --srt-success: rgba(var(--colors-green-400)); --srt-success-soft: rgba(var(--colors-green-900)); --srt-note: rgba(var(--colors-amber-900), .35); }
+
+.srt { color: var(--srt-text); }
+.srt-muted { color: var(--srt-muted); }
+.srt-small { font-size: 13px; }
+.srt-error { margin: 0 0 12px; color: var(--srt-danger); font-size: 14px; }
+.srt-late { color: var(--srt-danger); }
+.srt-link { color: var(--srt-accent); font-weight: 600; background: none; border: 0; padding: 0; cursor: pointer; }
+.srt-link:hover { text-decoration: underline; }
+.srt-back { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 12px; }
+
+.srt-header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+.srt-header__main { min-width: 0; }
+.srt-header__main h1 { overflow-wrap: anywhere; }
+.srt-header__sub { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0 0; }
+.srt-header__aside { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+
+.srt-badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 999px; background: var(--srt-soft); color: var(--srt-text); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.srt-badge--danger { background: var(--srt-danger-soft); color: var(--srt-danger); }
+.srt-badge--success { background: var(--srt-success-soft); color: var(--srt-success); }
+
+.srt-field { display: grid; gap: 6px; }
+.srt-field__label { font-size: 13px; font-weight: 600; color: var(--srt-muted); }
+.srt-check { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-size: 14px; }
+.srt-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.srt-actions--end { justify-content: flex-end; }
+
+.srt-connect { max-width: 560px; padding: 24px; display: grid; gap: 14px; }
+.srt-connect__title { margin: 0; font-size: 18px; font-weight: 600; }
+.srt-connect__form { display: grid; gap: 12px; justify-items: start; }
+.srt-connect__code { max-width: 200px; letter-spacing: .2em; }
+.srt-connect p { margin: 0; }
+
+.srt-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.srt-tabs__tab { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--srt-line); border-radius: 6px; background: transparent; color: var(--srt-muted); font-weight: 600; font-size: 14px; cursor: pointer; }
+.srt-tabs__tab:hover { color: var(--srt-text); }
+.srt-tabs__tab--active { border-color: var(--srt-accent); color: var(--srt-accent); }
+.srt-tabs__count { min-width: 22px; padding: 1px 7px; border-radius: 999px; background: var(--srt-soft); font-size: 12px; text-align: center; }
+
+.srt-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 14px; }
+.srt-toolbar__search { flex: 1 1 260px; max-width: 360px; }
+.srt-toolbar__filter { width: auto; min-width: 180px; }
+
+.srt-tableCard { overflow-x: auto; }
+.srt-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+.srt-table th { padding: 10px 16px; border-bottom: 1px solid var(--srt-line); color: var(--srt-muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+.srt-table td { padding: 12px 16px; border-bottom: 1px solid var(--srt-line); vertical-align: top; }
+.srt-table tbody tr:last-child td { border-bottom: 0; }
+.srt-table__primary { display: block; }
+.srt-table__secondary { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.srt-table__secondary:empty { display: none; }
+.srt-table__empty { padding: 48px 16px !important; color: var(--srt-muted); text-align: center; }
+.srt-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 14px; }
+
+.srt-ticket { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
+.srt-ticket__thread { display: grid; gap: 12px; min-width: 0; }
+.srt-ticket__side { display: grid; gap: 12px; }
+.srt-message { padding: 16px 18px; }
+.srt-message--staff { border-left: 3px solid var(--srt-accent); }
+.srt-message--internal { background: var(--srt-note) !important; border-left: 3px solid rgba(var(--colors-amber-500)); }
+.srt-message__meta { margin: 0 0 6px; color: var(--srt-muted); font-size: 13px; }
+.srt-message__body { margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+.srt-message__delivery { margin: 8px 0 0; color: var(--srt-success); font-size: 13px; }
+.srt-message__delivery--failed { color: var(--srt-danger); }
+.srt-reply { display: grid; gap: 10px; margin-top: 8px; }
+.srt-reply__body { min-height: 120px; resize: vertical; }
+
+.srt-side { display: grid; gap: 12px; padding: 16px; }
+.srt-side--links { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.srt-side__title { margin: 0; font-size: 15px; font-weight: 600; }
+.srt-list { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; margin: 0; font-size: 14px; }
+.srt-list dt { color: var(--srt-muted); }
+.srt-list dd { margin: 0; overflow-wrap: anywhere; }
+.srt-activity { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
+.srt-activity li { display: grid; gap: 2px; }
+
+@media (max-width: 1100px) {
+  .srt-ticket { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  /* iOS zooms into any focused field under 16px. */
+  .srt input, .srt select, .srt textarea { font-size: 16px; }
+  .srt-toolbar { flex-direction: column; align-items: stretch; }
+  .srt-toolbar__search, .srt-toolbar__filter { max-width: none; width: 100%; min-width: 0; }
+
+  /* Rows become cards: the first cell is the title, the rest show their column name. */
+  .srt-tableCard { overflow: visible; background: transparent !important; box-shadow: none !important; }
+  .srt-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .srt-table, .srt-table tbody, .srt-table tr, .srt-table td { display: block; width: 100%; }
+  .srt-table tr { margin-bottom: 10px; padding: 12px 14px; border: 1px solid var(--srt-line); border-radius: 8px; background: rgba(var(--colors-white)); }
+  .dark .srt-table tr { background: rgba(var(--colors-gray-800)); }
+  .srt-table td { padding: 4px 0; border: 0; overflow-wrap: anywhere; }
+  .srt-table td[data-label] { position: relative; padding-left: 42%; min-height: 26px; }
+  .srt-table td[data-label]::before { content: attr(data-label); position: absolute; top: 4px; left: 0; width: calc(42% - 10px); color: var(--srt-muted); font-size: 13px; }
+  .srt-pagination { justify-content: space-between; }
+}
+
+.srt-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.srt-chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 4px 2px 10px; border: 1px solid var(--srt-line); border-radius: 999px; font-size: 13px; }
+.srt-chip__remove { display: inline-grid; width: 20px; height: 20px; place-items: center; border: 0; border-radius: 50%; background: transparent; color: var(--srt-muted); cursor: pointer; font-size: 15px; line-height: 1; }
+.srt-chip__remove:hover { background: var(--srt-soft); color: var(--srt-danger); }
+.srt-files { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; font-size: 14px; }
